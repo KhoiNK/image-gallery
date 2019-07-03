@@ -20,7 +20,7 @@ yarn start
 ```
 
 ## Build Production
-Out put source will be placed in build folder
+Output source will be placed in build folder
 ```
 npm run build
 or
