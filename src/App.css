@@ -17,6 +17,25 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+#gallery-row .gallery-col__div .gallery-user__div {
+  padding: 10px;
+}
+
+#gallery-row .gallery-col__div .gallery-user__div .gallery-user-content__div {
+  display: flex;
+  align-items: center;
+}
+
+#gallery-row .gallery-col__div .gallery-user__div .gallery-user-content__div img {
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+#gallery-row .gallery-col__div .gallery-user__div .gallery-user-content__div label {
+  padding-left: 1rem;
+}
+
 #gallery-row .gallery-col__div .gallery-col-content__div {
   width: 100%;
   background: white;
@@ -24,7 +43,21 @@
 }
 #gallery-row .gallery-col__div .gallery-col-content__div .gallery-content__div {
   padding: 0.6rem;
-  height: 18rem;
+  height: 8rem;
+}
+
+@media only screen and (min-width: 48em) {
+  #gallery-row .gallery-col__div .gallery-col-content__div .gallery-content__div {
+    padding: 0.6rem;
+    height: 13rem;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  #gallery-row .gallery-col__div .gallery-col-content__div .gallery-content__div {
+    padding: 0.6rem;
+    height: 18rem;
+  }
 }
 
 #gallery-row .gallery-col__div .gallery-col-content__div img{
@@ -34,28 +67,40 @@
 }
 
 #gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn-row__div {
-  padding: 0 1rem 1rem 1rem;
+  margin: 0 0.6rem;
+  padding-bottom: 0.6rem;
 }
 
 #gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn-row__div .gallery-btn__div {
   color: #757474;
+  display: flex;
+  align-items: center;
 }
 
-#gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn-row__div .gallery-btn__div span {
-  font-size: 0.75rem;
+#gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn-row__div .gallery-btn__div {
+  font-size: 0.3rem;
   padding: 0.1rem;
 }
 
-/* 
+
 @media only screen and (min-width: 48em) {
-  #gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn__div span {
-    font-size: 0.3rem;
+  #gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn-row__div .gallery-btn__div {
+    font-size: 0.4rem;
+    padding: 0.1rem;
   }
 }
 
 @media only screen and (min-width: 62em) {
-  #gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn__div span {
-    padding: 0.3rem;
-    font-size: 14px;
+  #gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn-row__div .gallery-btn__div {
+    font-size: 0.75rem;
+    padding: 0.1rem;
   }
-} */
+}
+
+#gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn-row__div .gallery-btn__div i {
+  margin-left: auto;
+}
+
+#gallery-row .gallery-col__div .gallery-col-content__div .gallery-btn-row__div .gallery-btn__div:nth-child(1) i {
+  margin: unset;
+}

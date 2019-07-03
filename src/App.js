@@ -10,20 +10,28 @@ const ImageCard = () => (
       <div className="box">
         <div className='row gallery-btn-row__div'>
           <div className='col-xs-3 gallery-btn__div'>
-            <i class="fa fa-link" aria-hidden="true"></i>
+            <i className="fa fa-link" aria-hidden="true"></i>
           </div>
           <div className='col-xs-3 gallery-btn__div'>
-            <i class="fa fa-eye" aria-hidden="true"></i>
+            <i className="fa fa-eye" aria-hidden="true"></i>
             <span>1.0323</span>
           </div>
           <div className='col-xs-3 gallery-btn__div'>
-            <i class="fa fa-comment" aria-hidden="true"></i>
+            <i className="fa fa-comment" aria-hidden="true"></i>
             <span>1.0323</span>
           </div>
           <div className='col-xs-3 gallery-btn__div'>
-            <i class="fa fa-heart" aria-hidden="true"></i>
+            <i className="fa fa-heart" aria-hidden="true"></i>
             <span>1.0323</span>
           </div>
+        </div>
+      </div>
+    </div>
+    <div className='box gallery-user__div'>
+      <div className='row'>
+        <div className='col-xs-12 gallery-user-content__div'>
+          <img src='./img/nina.png' alt='nina'/>
+          <label>Ahihi</label>
         </div>
       </div>
     </div>
