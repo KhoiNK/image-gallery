@@ -1,54 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { getTrending } from './api/image';
+import ImageCard from './components/imageCard';
+
 import './App.css';
 
-const ImageCard = () => (
-  <div className="gallery-col__div col-md-3 col-sm-4 col-xs-6">
-    <div className='gallery-col-content__div'>
-      <div className="gallery-content__div">
-        <img src='./img/aaa.jpg' alt='alt img' />
-      </div>
-      <div className="box">
-        <div className='row gallery-btn-row__div'>
-          <div className='col-xs-3 gallery-btn__div'>
-            <i className="fa fa-link" aria-hidden="true"></i>
-          </div>
-          <div className='col-xs-3 gallery-btn__div'>
-            <i className="fa fa-eye" aria-hidden="true"></i>
-            <span>1.0323</span>
-          </div>
-          <div className='col-xs-3 gallery-btn__div'>
-            <i className="fa fa-comment" aria-hidden="true"></i>
-            <span>1.0323</span>
-          </div>
-          <div className='col-xs-3 gallery-btn__div'>
-            <i className="fa fa-heart" aria-hidden="true"></i>
-            <span>1.0323</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className='box gallery-user__div'>
-      <div className='row'>
-        <div className='col-xs-12 gallery-user-content__div'>
-          <img src='./img/nina.png' alt='nina'/>
-          <label>Ahihi</label>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+const LIMIT_IMAGES = 20;
 
 function App() {
+  const [images, setImage] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    const getTrendingData = async () => {
+      const { data } = await getTrending(offset);
+      setImage(image => [...image, ...data.data]);
+    }
+    getTrendingData();
+  }, [offset]);
+
+  const handleClickSeeMore = () => {
+    const newPage = page + 1;
+    setPage(newPage);
+    setOffset(newPage * LIMIT_IMAGES);
+    console.log('offset', offset);
+  }
+
   return (
     <div className='box'>
       <div className='row' id='gallery-row'>
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
+        {(images && images.length) && images.map((image, index) => <ImageCard image={image} key={`image${index}`} />)}
+      </div>
+      <div className='row' id='btn-row'>
+        <button onClick={handleClickSeeMore}><strong>SEE MORE</strong></button>
       </div>
     </div>
   );
